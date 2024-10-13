@@ -5,27 +5,29 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #title {
-    position: fixed;
-    top: 0px;
+    position: absolute;
+    top: 10px;
     left: 0px;
     right: 0px; 
-    padding: 20px;
-    margin: 0px;
+    padding: 10px;
     background-color: #62C2CE;
     text-align: center;
-    z-index: 10;
     font-family: 'JustLettersMedium';
     font-weight: bold;
-    font-size: 42px;
+    font-size: 32px;
+    z-index: 10;
 }
 
 #container {
-    width: 600px; 
-    margin: 200px) auto; 
-    padding: 0; 
+    width: 90vmin; 
+    height: 90vmin;
 }
 
 .row {
@@ -33,8 +35,8 @@ body {
 }
 
 .white, .black {
-    width: 75px; 
-    height: 75px;
+    width: 11.25vmin;
+    height: 11.25vmin; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,12 +54,13 @@ body {
 }
 
 #footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
     text-align: center;
-    padding: 10px;
     background-color: #62C2CE;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 10px;
 }
 
 #footer a {
