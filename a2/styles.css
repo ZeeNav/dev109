@@ -8,20 +8,21 @@ body {
 }
 
 #title {
-position:fixed;
-top:0px;
-left:0px;
-padding:10px;
-margin:0px;
-width:100%;
-background-color:#62C2CE;
-text-align:center;
-z-index:10;
-font-family: 'JustLettersMedium';
-font-weight: normal;
-font-style: normal;
-font-size:36px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px; /* Add this to span the full width */
+    padding: 10px;
+    margin: 0px;
+    background-color: #62C2CE;
+    text-align: center;
+    z-index: 10;
+    font-family: 'JustLettersMedium';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 36px;
 }
+
 
 #container {
     width: 600px; 
