@@ -12,22 +12,24 @@ body {
 }
 
 #title {
-    position: absolute;
-    top: 10px;
+    position: fixed;
+    top: 0px;
     left: 0px;
     right: 0px; 
-    padding: 10px;
+    padding: 20px;
+    margin: 0px;
     background-color: #62C2CE;
     text-align: center;
+    z-index: 10;
     font-family: 'JustLettersMedium';
     font-weight: bold;
-    font-size: 32px;
-    z-index: 10;
+    font-size: 42px;
 }
 
 #container {
-    width: 90vmin; 
-    height: 90vmin;
+    width: 600px; 
+    margin: 200px auto; 
+    padding: 0; 
 }
 
 .row {
@@ -35,14 +37,13 @@ body {
 }
 
 .white, .black {
-    width: 11.25vmin;
-    height: 11.25vmin; 
-    display: flex;
+    width: 75px; 
+    height: 75px;
+    display: center;
     justify-content: center;
     align-items: center;
-    font-size: 36px; 
-    font-weight: bold;
 }
+
 
 .white {
     background-color: white;
@@ -54,13 +55,12 @@ body {
 }
 
 #footer {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
     text-align: center;
-    background-color: #62C2CE;
     padding: 10px;
+    background-color: #62C2CE;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 #footer a {
