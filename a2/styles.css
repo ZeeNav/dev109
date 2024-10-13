@@ -1,1 +1,69 @@
+body {
+    background-image: url('https://3.bp.blogspot.com/-aNRb0w9Uu2E/Uk0w1v9lXjI/AAAAAAAAHrM/RipxfZqlQQ4/s1600/Texture-Backgrounds-Wallpaper-HD.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#title {
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 48px;
+    background-color: #62C2CE;
+    color: black;
+    padding: 20px;
+    margin: 0;
+}
+
+#container {
+    width: 600px; 
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.row {
+    display: flex;
+}
+
+.white, .black {
+    width: 75px; 
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px; 
+    font-weight: bold;
+}
+
+.white {
+    background-color: white;
+}
+
+.black {
+    background-color: #787878;
+    color: white; 
+}
+
+
+#footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #62C2CE;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#footer a {
+    text-decoration: none;
+    color: #0000EE;
+}
+
+#footer img {
+    margin-top: 10px;
+}
 
