@@ -2,12 +2,10 @@ body {
     background-image: url('https://3.bp.blogspot.com/-aNRb0w9Uu2E/Uk0w1v9lXjI/AAAAAAAAHrM/RipxfZqlQQ4/s1600/Texture-Backgrounds-Wallpaper-HD.jpg');
     background-size: cover;
     background-position: center;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
 #title {
+    text-align: center
     position: fixed;
     top: 0px;
     left: 0px;
