@@ -45,7 +45,7 @@ body {
 
 #feature {
     background-color: #8CC63E;
-    background-image: url('https://i.pinimg.com/originals/9c/8c/da/9c8cdaf53039c71497878c14ae6722fd.jpg'); /* Replace with desired image */
+    background-image: url('https://i.pinimg.com/originals/9c/8c/da/9c8cdaf53039c71497878c14ae6722fd.jpg'); 
     background-size: contain;
     background-position: right;
     background-repeat: no-repeat;
