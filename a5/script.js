@@ -54,6 +54,6 @@ imageDisplay.addEventListener('mouseout', () => {
       currentIndex = (currentIndex + 1) % images.length;
       updateImage();
   }, 5000);
-});
+});  
 
 updateImage();
