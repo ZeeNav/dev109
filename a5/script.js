@@ -1,23 +1,23 @@
 const images = [
   {
       src: "https://ceoworld.biz/wp-content/uploads/2021/08/Bugs-Bunny.jpg",
-      description: "Image 1: Bugs Bunny"
+      description: "Bugs Bunny"
   },
   {
       src: "https://thewittyblog.com/wp-content/uploads/2020/04/pooh-e1587660064143.jpg",
-      description: "Image 2: Winnie the Pooh"
+      description: "Winnie the Pooh"
   },
   {
-      src: "https://images.moviesanywhere.com/3e2a9e774fc77bb450ce8724bb1c5d15/d6ecc248-d04f-4a3a-95e3-fcda262ad62f.jpg",
-      description: "Image 3: Stuart little"
+      src: "https://occ-0-8407-116.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABR6vn8BtaC8r6FhDOfMCliOri5vm4p5bCnxzV61blyd_QJP0qr8VdYGGyoFxkLfwDc1nDVqf4ilKrmD1XquOAlXD29EyAM4UbC4i.jpg?r=54a",
+      description: "Ben 10"
   },
   {
       src: "https://i.redd.it/wdfo3bbxdvva1.jpg",
-      description: "Image 4: Scooby-Doo"
+      description: "Scooby-Doo"
   },
   {
       src: "https://m.media-amazon.com/images/S/pv-target-images/4f995dde6b43fbe45bab9336476a66df17cc83270f06bc5e73492d21edcf7bef.jpg",
-      description: "Image 5: Tom and Jerry"
+      description: "Tom and Jerry"
   }
 ];
 
@@ -57,4 +57,3 @@ imageDisplay.addEventListener('mouseout', () => {
 });
 
 updateImage();
-
