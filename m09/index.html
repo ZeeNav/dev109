@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dots</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      background: beige;
+      position: relative;
+      overflow: hidden;
+    }
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+    }
+    .controls {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: white;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+    .controls label {
+      margin-right: 10px;
+    }
+    button {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <label for="dot-color">Color:</label>
+    <input type="color" id="dot-color" value="#0000ff">
+    
+    <label for="dot-size">Size:</label>
+    <input type="number" id="dot-size" value="8" min="4" max="50">
+
+    <button id="clear-screen">Clear</button>
+  </div>
+
+  <script>
+    const clearButton = document.getElementById("clear-screen");
+    const colorPicker = document.getElementById("dot-color");
+    const sizeInput = document.getElementById("dot-size");
+
+    clearButton.addEventListener("click", function(event) {
+
+      const dots = document.querySelectorAll(".dot");
+      dots.forEach(dot => dot.remove());
+
+      event.stopPropagation();
+    });
+
+    document.body.addEventListener("click", function(event) {
+
+      if (event.target.closest(".controls")) return;
+
+      const dot = document.createElement("div");
+      dot.className = "dot";
+
+      const color = colorPicker.value;
+      const size = sizeInput.value;
+
+      dot.style.backgroundColor = color;
+      dot.style.width = `${size}px`;
+      dot.style.height = `${size}px`;
+
+      const offset = size / 2;
+      dot.style.left = `${event.pageX - offset}px`;
+      dot.style.top = `${event.pageY - offset}px`;
+
+      document.body.appendChild(dot);
+    });
+  </script>
+</body>
+</html>
 
