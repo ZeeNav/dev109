@@ -1,1 +1,216 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+}
 
+#wrap {
+    width: 100%;
+    max-width: 940px;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#header {
+    background: linear-gradient(to right, #f9f9f9, #ececec);
+    padding: 20px 30px;
+    text-align: center;
+}
+#header h1 {
+    font-weight: bold;
+    color: #3f3f3f;
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+#header h1:hover {
+    color: #007bff;
+}
+#header h2 {
+    font-weight: normal;
+    color: #333;
+    font-size: 22px;
+    background: #ffebc2;
+    border: 1px solid #ffe07f;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background 0.3s;
+}
+#header h2:hover {
+    background: #ffd36a;
+}
+
+#topmenu {
+    background: #f1f1f1;
+    padding: 10px 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+#topmenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#topmenu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+#topmenu li:last-child {
+    margin-right: 0;
+}
+#topmenu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+#topmenu li a:hover {
+    background: #007bff;
+    color: white;
+}
+
+#content {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+}
+#content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+#content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.large-image {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.large-image:hover {
+    transform: scale(1.05);
+}
+
+.side-images {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.small-image {
+    width: calc(50% - 5px);
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.small-image:hover {
+    transform: scale(1.1);
+}
+
+.github-logo {
+    width: calc(50% - 5px);
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.github-logo:hover {
+    transform: scale(1.1);
+}
+
+.work-img {
+    width: calc(50% - 5px);
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.work-img:hover {
+    transform: scale(1.1);
+}
+
+
+.bull {
+    width: calc(50% - 5px);
+    height: 280px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.bull:hover {
+    transform: scale(1.1);
+}
+
+.chess {
+    width: calc(50% - 5px);
+    height: 280px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.chess:hover {
+    transform: scale(1.1);
+}
+
+#footer {
+    background: #3f3f3f;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid #1f1f1f;
+}
+#footer p {
+    margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    #wrap {
+        width: 100%;
+        margin: 0;
+    }
+    .large-image, .side-images {
+        width: 100%;
+    }
+    .small-image {
+        width: 45%;
+    }
+    #topmenu li {
+        display: block;
+        margin: 10px 0;
+    }
+}
