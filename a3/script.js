@@ -1,4 +1,3 @@
-
 document.getElementById("rhombusForm")
   .addEventListener("submit", function(event) {
     event.preventDefault();
