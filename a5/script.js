@@ -34,7 +34,7 @@ function updateImage() {
   imageDescription.textContent = images[currentIndex].description;
 }
 
-// Button event listeners
+
 prevBtn.addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
   updateImage();
@@ -45,13 +45,13 @@ nextBtn.addEventListener('click', () => {
   updateImage();
 });
 
-// Auto slideshow
+
 let autoSlide = setInterval(() => {
   currentIndex = (currentIndex + 1) % images.length;
   updateImage();
 }, 5000);
 
-// Pause on mouse over, resume on mouse out
+
 imageDisplay.addEventListener('mouseover', () => clearInterval(autoSlide));
 imageDisplay.addEventListener('mouseout', () => {
   autoSlide = setInterval(() => {
@@ -60,5 +60,4 @@ imageDisplay.addEventListener('mouseout', () => {
   }, 5000);
 });
 
-// Initial display
 updateImage();
