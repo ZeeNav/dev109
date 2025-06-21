@@ -1,4 +1,4 @@
-/* Base layout styles */
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -7,7 +7,6 @@ body {
   color: #333;
 }
 
-/* Form container styling */
 form {
   margin-bottom: 30px;
   padding: 20px;
@@ -17,7 +16,6 @@ form {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Input and dropdown styling */
 input, select {
   padding: 8px;
   font-size: 16px;
@@ -27,7 +25,7 @@ input, select {
   box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* Submit button styling */
+
 button {
   background-color: #4CAF50;
   color: white;
