@@ -1,129 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liquid Layout</title>
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/boeticher" type="text/css"/>
-    <style>
-        * {
-            font-family: 'BoeticherRegular', sans-serif;
-            color: #665544;
-            text-align: center;
-        }
-
-        p {
-            font-family: 'BoeticherRegular', sans-serif;
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            background-image: url('https://i.ytimg.com/vi/Rht4_mx98qU/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGH8gNygWMA8=&rs=AOn4CLAcAQ4hbd6AllRctXFOpt6o2WJ3Iw');
-            background-size: cover;
-            margin: 0;
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        #nav {
-            background-color: #6A5ACD;
-            padding: 0.5em 0;
-            margin: 1%;
-        }
-
-        #nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        #nav ul li {
-            display: inline;
-            padding: 0.5em;
-        }
-
-        #nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-
-        #feature {
-            background-color: #8CC63E;
-            background-image: url('https://i.pinimg.com/originals/9c/8c/da/9c8cdaf53039c71497878c14ae6722fd.jpg');
-            background-size: contain;
-            background-position: right;
-            background-repeat: no-repeat;
-            height: 10em;
-            margin: 1%;
-        }
-
-        .article {
-            height: 10em;
-            margin-bottom: 1em;
-        }
-
-        .column1 {
-            background-color: #FFB6C1;
-            width: 31.3%;
-            float: left;
-            margin: 1%;
-        }
-
-        .column2 {
-            background-color: #DC143C;
-            width: 31.3%;
-            float: left;
-            margin: 1%;
-        }
-
-        .column3 {
-            background-color: #D8BFD8;
-            width: 31.3%;
-            float: left;
-            margin: 1%;
-        }
-
-        #footer {
-            background-color: #696969;
-            padding: 0.5em 0;
-            margin: 1%;
-            clear: both;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liquid Layout</title>
+  
+  <!-- Corrected font link from fontlibrary.org -->
+  <link rel="stylesheet" href="https://fontlibrary.org/face/boeticher" type="text/css" />
+  
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="header">
-        <h1>Logo</h1>
-        <div id="nav">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
+  <div id="header">
+    <h1>Logo</h1>
+    <div id="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </div>
-    
-    <div id="content">
-        <div id="feature">
-            <p>Feature</p>
-        </div>
-        <div class="article column1">
-            <p>Column One</p>
-        </div>
-        <div class="article column2">
-            <p>Column Two</p>
-        </div>
-        <div class="article column3">
-            <p>Column Three</p>
-        </div>
-    </div>
+  </div>
 
-    <div id="footer">
-        <p>&copy; Copyright 2024</p>
+  <div id="content">
+    <div id="feature">
+      <p>Feature</p>
     </div>
+    <div class="article column1">
+      <p>Column One</p>
+    </div>
+    <div class="article column2">
+      <p>Column Two</p>
+    </div>
+    <div class="article column3">
+      <p>Column Three</p>
+    </div>
+  </div>
+
+  <div id="footer">
+    <p>&copy; Copyright 2024</p>
+  </div>
 </body>
 </html>
-
