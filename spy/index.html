@@ -1,36 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>I Spy Game</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>I Spy Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrapper">
-    <h1>I Spy Game</h1>
-    <p>Find the hidden items by clicking on them in the image below:</p>
+    <div id="game">
+        <h1>I Spy Game</h1>
+        <p>See if you can find the following objects on the picture. Once you find them, click on them!</p>
+        <ul id="itemList"></ul>
 
-    <ul id="items-list">
-      <li id="mug"> Mug</li>
-      <li id="notebook"> Notebook</li>
-      <li id="clock"> Clock</li>
-      <li id="glasses"> Glasses</li>
-      <li id="pencil"> Pencil</li>
-    </ul>
-
-    <div class="image-container">
-      <img src="https://github.com/ZeeNav/dev109/blob/a22631db5db324233a0efb0bbe32ad388a12b8ba/vintage-desk.jpg" alt="Cluttered Desk" usemap="#spyMap" id="spyImage">
-      <map name="spyMap">
-        <area shape="rect" coords="100,150,160,190" href="#" alt="mug" id="area-mug">
-        <area shape="rect" coords="200,250,270,300" href="#" alt="notebook" id="area-notebook">
-        <area shape="rect" coords="300,80,360,140" href="#" alt="clock" id="area-clock">
-        <area shape="rect" coords="400,220,460,260" href="#" alt="glasses" id="area-glasses">
-        <area shape="rect" coords="150,320,210,350" href="#" alt="pencil" id="area-pencil">
-      </map>
+        <img id="gameImage" src="" usemap="#itemMap" alt="I Spy Image">
+        <map name="itemMap" id="itemMap"></map>
     </div>
 
     <script src="script.js"></script>
-  </div>
 </body>
 </html>
