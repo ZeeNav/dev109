@@ -10,7 +10,7 @@ function Hotel(name, rooms, booked) {
 
 var quayHotel = new Hotel('Quay', 40, 25);
 var parkHotel = new Hotel('Park', 120, 77);
-var sunsetHotel = new Hotel('Sunset', 86, 10); // New 3rd hotel
+var sunsetHotel = new Hotel('Sunset', 86, 10); 
 
 document.getElementById('hotel1').textContent =
   quayHotel.name + ': ' + quayHotel.checkAvailability() + ' rooms left';
