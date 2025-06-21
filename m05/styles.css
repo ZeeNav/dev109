@@ -1,3 +1,4 @@
+
 body {
   background-color: #fdd663;
   color: #333;
@@ -9,8 +10,8 @@ body {
 }
 
 header {
-  background-color: #fdd663;
   padding: 20px;
+  background-color: #fdd663;
 }
 
 header h1 {
@@ -25,17 +26,13 @@ header p {
   color: #523620;
 }
 
-#teacher2 {
-  display: none;
-}
-
 #blackboard {
   background-color: #425a5a;
-  width: 700px;
   border: 15px solid #523620;
   border-radius: 10px;
+  width: 750px;
   margin: 30px auto;
-  padding: 20px;
+  padding: 30px;
   box-sizing: border-box;
 }
 
@@ -46,11 +43,10 @@ header p {
 }
 
 #output {
-  text-align: left;
   color: white;
+  text-align: left;
   font-size: 18px;
   line-height: 1.6;
-  padding-left: 20px;
   flex: 1;
 }
 
@@ -59,7 +55,8 @@ header p {
   margin-bottom: 10px;
 }
 
-#blackboard-teacher {
+
+#teacher {
   width: 200px;
   height: auto;
   margin-left: 20px;
@@ -72,14 +69,16 @@ header p {
 
   #content {
     flex-direction: column;
-  }
-
-  #blackboard-teacher {
-    margin: 20px 0 0;
+    align-items: center;
   }
 
   #output {
     text-align: center;
-    padding-left: 0;
+    padding-bottom: 20px;
+  }
+
+  #teacher {
+    margin: 0;
+    width: 150px;
   }
 }
