@@ -15,7 +15,8 @@ form {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
-input, select {
+input,
+select {
   padding: 8px;
   font-size: 16px;
   margin-bottom: 10px;
@@ -24,9 +25,8 @@ input, select {
   box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
 }
 
-
 button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -38,7 +38,6 @@ button {
 button:hover {
   background-color: #45a049;
 }
-
 
 #rhombus {
   font-family: monospace;
