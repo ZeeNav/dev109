@@ -1,47 +1,51 @@
-document.getElementById('rhombusForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const height = parseInt(document.getElementById('height').value);
-    const oddColor = document.getElementById('oddColor').value;
-    const evenColor = document.getElementById('evenColor').value;
-    const symbol = document.getElementById('symbol').value;
-
-    const rhombusSection = document.getElementById('rhombus');
-    rhombusSection.innerHTML = '';
-
-    generateHalf(height, oddColor, evenColor, symbol, rhombusSection, true); 
-    addMiddleBreak(height, rhombusSection); 
-    generateHalf(height, oddColor, evenColor, symbol, rhombusSection, false); 
-});
-
-function generateHalf(height, oddColor, evenColor, symbol, rhombusSection, isTop) {
-    const start = 2;
-    const end = height;
-    const step = 2;
-
-    for (let i = start; i <= end; i += step) {
-        const symbolCount = isTop ? i : end - i + start;
-        createLine(symbolCount, height, oddColor, evenColor, symbol, rhombusSection);
-    }
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  background-color: #f0f4f8;
+  color: #333;
 }
 
-function addMiddleBreak(height, rhombusSection) {
-    const middleLine = document.createElement('div');
-    const spaces = '<span style="color:white">*'.repeat(height) + '</span>';
-    middleLine.innerHTML = spaces;
-    rhombusSection.appendChild(middleLine);
+form {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #e6f2ff;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
 
-function createLine(symbolCount, totalHeight, oddColor, evenColor, symbol, rhombusSection) {
-    const line = document.createElement('div');
-    const spaces = '<span style="color:white">*'.repeat((totalHeight - symbolCount) / 2) + '</span>';
-
-    let coloredSymbols = '';
-    for (let i = 1; i <= symbolCount; i++) {
-        coloredSymbols += `<span style="color:${i % 2 === 0 ? evenColor : oddColor}">${symbol}</span>`;
-    }
-
-    line.innerHTML = spaces + coloredSymbols + spaces;
-    rhombusSection.appendChild(line);
+input, select {
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
 }
 
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#rhombus {
+  font-family: monospace;
+  white-space: pre;
+  line-height: 1.2;
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid #ddd;
+  display: inline-block;
+  margin-top: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
