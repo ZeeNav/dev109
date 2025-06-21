@@ -1,6 +1,4 @@
-
 let number = prompt('Enter a number between 0 and 10:');
-
 
 number = Number(number);
 if (isNaN(number) || number < 0 || number > 10) {
