@@ -1,51 +1,61 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 50px;
-  background-color: #f0f4f8;
-  color: #333;
+/**
+ * Handles form submission and generates the rhombus pattern
+ */
+document.getElementById('rhombusForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const height = parseInt(document.getElementById('height').value);
+  const oddColor = document.getElementById('oddColor').value;
+  const evenColor = document.getElementById('evenColor').value;
+  const symbol = document.getElementById('symbol').value;
+
+  const rhombusSection = document.getElementById('rhombus');
+  rhombusSection.innerHTML = ''; // Clear previous result
+
+  generateHalf(height, oddColor, evenColor, symbol, rhombusSection, true);  // Top
+  addMiddleLine(height, oddColor, evenColor, symbol, rhombusSection);       // Middle
+  generateHalf(height, oddColor, evenColor, symbol, rhombusSection, false); // Bottom
+});
+
+/**
+ * Generate top or bottom half of the rhombus
+ */
+function generateHalf(height, oddColor, evenColor, symbol, container, isTop) {
+  for (let i = 1; i <= height; i += 2) {
+    const symbolCount = isTop ? i : height - i + 1;
+    createLine(symbolCount, height, oddColor, evenColor, symbol, container);
+  }
 }
 
-form {
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: #e6f2ff;
-  border-radius: 10px;
-  display: inline-block;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+/**
+ * Add the center line of the rhombus
+ */
+function addMiddleLine(height, oddColor, evenColor, symbol, container) {
+  const line = document.createElement('div');
+  let content = '';
+
+  for (let i = 1; i <= height; i++) {
+    const color = i % 2 === 0 ? evenColor : oddColor;
+    content += `<span style="color:${color}">${symbol}</span>`;
+  }
+
+  line.innerHTML = content;
+  container.appendChild(line);
 }
 
-input, select {
-  padding: 8px;
-  font-size: 16px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
-}
+/**
+ * Create a single centered line of colored symbols
+ */
+function createLine(symbolCount, totalWidth, oddColor, evenColor, symbol, container) {
+  const line = document.createElement('div');
+  const padding = '&nbsp;'.repeat((totalWidth - symbolCount) / 2);
+  let coloredSymbols = '';
 
-button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-}
+  for (let i = 1; i <= symbolCount; i++) {
+    const color = i % 2 === 0 ? evenColor : oddColor;
+    coloredSymbols += `<span style="color:${color}">${symbol}</span>`;
+  }
 
-button:hover {
-  background-color: #45a049;
-}
-
-#rhombus {
-  font-family: monospace;
-  white-space: pre;
-  line-height: 1.2;
-  background-color: #fff;
-  padding: 20px;
-  border: 2px solid #ddd;
-  display: inline-block;
-  margin-top: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  line.innerHTML = padding + coloredSymbols + padding;
+  container.appendChild(line);
 }
