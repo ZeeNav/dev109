@@ -59,7 +59,6 @@ header p {
   margin-bottom: 10px;
 }
 
-/* Optional: Responsive layout for small screens */
 @media (max-width: 650px) {
   #blackboard {
     width: 90%;
