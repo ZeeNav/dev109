@@ -1,26 +1,19 @@
-function generateTable() {
-    const numberInput = document.getElementById('numberInput').value;
-    const output = document.getElementById('output');
+// Prompt the user for a number between 0 and 10
+let number = prompt('Enter a number between 0 and 10:');
 
-    // Validate input
-    if (numberInput !== '' && !isNaN(numberInput) && numberInput >= 0 && numberInput <= 10) {
-        const number = Number(numberInput);
-        let msg = '<h2>Multiplication Table</h2>';
-
-        for (let i = 1; i <= 10; i++) {
-            msg += `<p>${number} x ${i} = ${number * i}</p>`;
-        }
-
-        output.innerHTML = msg;
-    } else {
-        output.innerHTML = "<p>Please enter a valid number between 0 and 10.</p>";
-    }
+// Convert the input to a number and set to 0 if invalid
+number = Number(number);
+if (isNaN(number) || number < 0 || number > 10) {
+  number = 0;
 }
 
-function resetTable() {
-    document.getElementById('numberInput').value = '';
-    document.getElementById('output').innerHTML = '';
+// Start building the HTML output for the multiplication table
+let msg = '<h2>Multiplication Table</h2>';
+
+// Use a loop to generate the table from 1 to 10
+for (let i = 1; i <= 10; i++) {
+  msg += `<p>${i} x ${number} = ${i * number}</p>`;
 }
 
-document.getElementById('generateBtn').addEventListener('click', generateTable);
-document.getElementById('resetBtn').addEventListener('click', resetTable);
+// Insert the table into the page
+document.getElementById('output').innerHTML = msg;
