@@ -1,24 +1,16 @@
-
 body {
   background-color: #fdd663;
   color: #333;
   font-family: 'Wellfleet', serif;
   text-align: center;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
-  position: relative;
-  min-height: 100vh;
+  padding: 0;
   box-sizing: border-box;
 }
 
 header {
   background-color: #fdd663;
   padding: 20px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 header h1 {
@@ -34,54 +26,60 @@ header p {
 }
 
 #teacher2 {
-  position: absolute;
-  bottom: 20px;
-  right: 50px;
-  width: 250px;
-  height: auto;
+  display: none;
 }
 
 #blackboard {
   background-color: #425a5a;
-  width: 600px;
-  min-height: 400px;
+  width: 700px;
   border: 15px solid #523620;
   border-radius: 10px;
-  padding: 30px 20px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 30px auto;
+  padding: 20px;
   box-sizing: border-box;
 }
 
+#content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 #output {
+  text-align: left;
   color: white;
   font-size: 18px;
   line-height: 1.6;
-  width: 100%;
+  padding-left: 20px;
+  flex: 1;
 }
 
 #output h2 {
   font-size: 24px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-@media (max-width: 700px) {
+#blackboard-teacher {
+  width: 200px;
+  height: auto;
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
   #blackboard {
     width: 90%;
-    padding: 20px;
   }
 
-  #teacher2 {
-    display: none;
+  #content {
+    flex-direction: column;
   }
 
-  header h1 {
-    font-size: 36px;
+  #blackboard-teacher {
+    margin: 20px 0 0;
   }
 
   #output {
-    font-size: 16px;
+    text-align: center;
+    padding-left: 0;
   }
 }
