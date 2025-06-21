@@ -1,6 +1,4 @@
-/**
- * Handles form submission and generates the rhombus pattern
- */
+
 document.getElementById("rhombusForm")
   .addEventListener("submit", function(event) {
     event.preventDefault();
@@ -13,7 +11,7 @@ document.getElementById("rhombusForm")
     const rhombusSection = document.getElementById("rhombus");
     rhombusSection.innerHTML = ""; // Clear previous result
 
-    // Top half
+
     generateHalf(
       height,
       oddColor,
@@ -23,10 +21,10 @@ document.getElementById("rhombusForm")
       true
     );
 
-    // Middle line
+
     addMiddleLine(height, oddColor, evenColor, symbol, rhombusSection);
 
-    // Bottom half
+
     generateHalf(
       height,
       oddColor,
@@ -37,9 +35,7 @@ document.getElementById("rhombusForm")
     );
   });
 
-/**
- * Generate top or bottom half of the rhombus
- */
+
 function generateHalf(height, oddColor, evenColor, symbol, container, isTop) {
   for (let i = 1; i <= height; i += 2) {
     const symbolCount = isTop ? i : height - i + 1;
@@ -47,9 +43,7 @@ function generateHalf(height, oddColor, evenColor, symbol, container, isTop) {
   }
 }
 
-/**
- * Add the center line of the rhombus
- */
+
 function addMiddleLine(height, oddColor, evenColor, symbol, container) {
   const line = document.createElement("div");
   let content = "";
@@ -63,9 +57,7 @@ function addMiddleLine(height, oddColor, evenColor, symbol, container) {
   container.appendChild(line);
 }
 
-/**
- * Create a single centered line of colored symbols
- */
+
 function createLine(symbolCount, totalWidth, oddColor, evenColor, symbol, container) {
   const line = document.createElement("div");
   const padding = "&nbsp;".repeat((totalWidth - symbolCount) / 2);
