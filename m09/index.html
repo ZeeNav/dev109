@@ -2,83 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dots</title>
+  <title>Grocery List - Module 08</title>
   <style>
     body {
-      height: 100vh;
       margin: 0;
-      background: beige;
-      position: relative;
-      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      background: #333;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
     }
-    .dot {
-      position: absolute;
-      border-radius: 50%;
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
     }
-    .controls {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      background: white;
+
+    #grocery-container {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    .item {
       padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      z-index: 1000;
+      margin: 5px 0;
+      font-weight: bold;
+      color: #fff;
     }
-    .controls label {
-      margin-right: 10px;
+
+    .item:nth-child(odd) {
+      background-color: #d96e6e;
     }
+
+    .item:nth-child(even) {
+      background-color: #e3875a;
+    }
+
+    #controls {
+      margin-top: 15px;
+      display: flex;
+      gap: 5px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+    }
+
     button {
-      margin-top: 5px;
+      padding: 8px 10px;
+      border: none;
+      background: #5a9;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #48a;
+    }
+
+    #error {
+      margin-top: 10px;
+      color: #f55;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <div class="controls">
-    <label for="dot-color">Color:</label>
-    <input type="color" id="dot-color" value="#0000ff">
-    
-    <label for="dot-size">Size:</label>
-    <input type="number" id="dot-size" value="8" min="4" max="50">
-
-    <button id="clear-screen">Clear</button>
+  <h1>BUY GROCERIES</h1>
+  <div id="grocery-container">
+    <div id="grocery-list"></div>
+    <div id="controls">
+      <input type="text" id="item-input" placeholder="Add new grocery item">
+      <button onclick="addItem()">Add Item</button>
+    </div>
+    <div id="error"></div>
   </div>
 
   <script>
-    const clearButton = document.getElementById("clear-screen");
-    const colorPicker = document.getElementById("dot-color");
-    const sizeInput = document.getElementById("dot-size");
 
-    clearButton.addEventListener("click", function(event) {
+    function addItem() {
+      const input = document.getElementById('item-input');
+      const value = input.value.trim();
+      const list = document.getElementById('grocery-list');
+      const errorDiv = document.getElementById('error');
 
-      const dots = document.querySelectorAll(".dot");
-      dots.forEach(dot => dot.remove());
+      try {
+        if (!value) {
+          throw new Error("Empty input not allowed");
+        }
 
-      event.stopPropagation();
-    });
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'item';
+        itemDiv.textContent = value;
+        list.appendChild(itemDiv);
+      } catch (e) {
+        console.log(e); 
+      } finally {
+        if (!value) {
+          errorDiv.textContent = "Entry was empty!";
+          return;
+        } else {
+          errorDiv.textContent = ""; 
+        }
 
-    document.body.addEventListener("click", function(event) {
-
-      if (event.target.closest(".controls")) return;
-
-      const dot = document.createElement("div");
-      dot.className = "dot";
-
-      const color = colorPicker.value;
-      const size = sizeInput.value;
-
-      dot.style.backgroundColor = color;
-      dot.style.width = `${size}px`;
-      dot.style.height = `${size}px`;
-
-      const offset = size / 2;
-      dot.style.left = `${event.pageX - offset}px`;
-      dot.style.top = `${event.pageY - offset}px`;
-
-      document.body.appendChild(dot);
-    });
+        input.value = ""; 
+      }
+    }
   </script>
 </body>
 </html>
-
