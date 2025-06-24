@@ -1,67 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>RESOURCES-GAINTOWN</title>
-<link rel="stylesheet" href="css/SamWResources.css">
-</head>
+import { resources } from './database.js';
 
-</head>
-<body>
-    <!-- Navigation -->
-  <header>
-<div id="logo"><a href="index.html">GAIN TOWN</a></div>
-    <nav>
-       <a href="https://sam-wade-bc.github.io/grp109/team_project/index.html">Home</a>
-       <a href="https://sam-wade-bc.github.io/grp109/team_project/subscriptions.html">Subscriptions</a>
-       <a href="https://sam-wade-bc.github.io/grp109/team_project/customworkout.html">Custom Workout</a>
-       <a href="https://sam-wade-bc.github.io/grp109/team_project/resources.html">Resources</a>
-       <a href="https://sam-wade-bc.github.io/grp109/team_project/iterations.html">Iterations & changelog</a>
-       <a href="https://sam-wade-bc.github.io/grp109/team_project/meettheteam.html">Meet the Team</a>
-    </nav>
-  </header>
+let currentFilter = "All";
 
-  <h1>Resource Finder</h1>
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("searchInput");
+  const resultsContainer = document.getElementById("resultsContainer");
 
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search resources...">
-    <button onclick="filterResources()">Search</button>
-  </div>
-  <!-- NEED TO MAKE THE TAGS A JS SCRIPT SO THAT THE TAGS ACTIVELY REFLECT ANY ARTICLES PLACED IN THE DATABASE -->
-  <div class="filters">
-    <button onclick="setFilter('All')" class="active">All</button>
-    <button onclick="setFilter('Upper Body')">Upper Body</button>
-    <button onclick="setFilter('Strength')">Strength</button>
-    <button onclick="setFilter('Flexability')">Flexibility</button>
-    <button onclick="setFilter('Stamina')">Stamina</button>
-  </div>
+  if (!resultsContainer) {
+    console.error("Element with ID 'resultsContainer' not found.");
+    return;
+  }
 
-  <div class="results" id="resultsContainer">
-    <!-- Resources show up here -->
-  </div>
+  // Initial render
+  filterResources();
 
-   <footer>
-<hr>
- &copy; 2025 GAIN TOWN. All rights reserved.
-<br>
-<p>Change the style of this page:</p>
-<select id="themeSelector">
-    <option value="css/SamWResorces.css">Sam W</option>
-    <option value="css/navdeepSResources.css">Navdeep S</option>
-    <option value="css/quinnNResources.css">Quinn N</option>
+  // Optional: filter as the user types
+  searchInput.addEventListener("input", filterResources);
+});
 
-</select>
+function filterResources() {
+  const keyword = document.getElementById("searchInput").value.toLowerCase();
+  const resultsContainer = document.getElementById("resultsContainer");
+  resultsContainer.innerHTML = "";
 
-    <script>
-        const selector = document.getElementById('themeSelector');
-        const themeLink = document.getElementById('themeStylesheet');
+  const filtered = resources.filter(resource => {
+    const matchesKeyword = resource.title.toLowerCase().includes(keyword) ||
+                           resource.description.toLowerCase().includes(keyword);
+    const matchesFilter = currentFilter === "All" || resource.tags.includes(currentFilter);
+    return matchesKeyword && matchesFilter;
+  });
 
-        selector.addEventListener('change', function () {
-            const selectedTheme = this.value;
-            themeLink.href = selectedTheme;
-        });
-    </script>
-  </footer>
-<script type="module" src="js/resourcesPage.js"></script>
+  if (filtered.length === 0) {
+    resultsContainer.innerHTML = "<p>No results found.</p>";
+    return;
+  }
 
-</body>
-</html>
+  filtered.forEach(resource => {
+    const div = document.createElement("div");
+    div.className = "resource";
+    div.innerHTML = `
+      <div class="resource-title"><a href="${resource.link}" target="_blank">${resource.title}</a></div>
+      <div class="resource-description">${resource.description}</div>
+      <div class="resource-tags">Tags: ${resource.tags.join(", ")}</div>
+    `;
+    resultsContainer.appendChild(div);
+  });
+}
+
+function setFilter(tag) {
+  currentFilter = tag;
+  const buttons = document.querySelectorAll(".filters button");
+
+  buttons.forEach(btn => {
+    btn.classList.remove("active");
+    if (btn.textContent === tag) {
+      btn.classList.add("active");
+    }
+  });
+
+  filterResources();
+}
+
+// Make functions accessible to HTML
+window.setFilter = setFilter;
+window.filterResources = filterResources;
